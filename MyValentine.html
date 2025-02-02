@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Button Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        .button-container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: rgba(255, 192, 203, 0.8);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            font-size: 1.3rem;
+            padding: 12px 24px;
+            margin: 15px;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+        }
+        button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        #no-btn {
+            position: absolute;
+        }
+        #success-image {
+            display: none;
+            margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 5px solid #ff9a9e;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <h1>Be My Valentine?</h1>
+        <button id="yes-btn" class="btn">Yes</button>
+        <button id="no-btn" class="btn">No</button>
+        <img id="success-image" src="#" alt="Happy Valentine's Day" />
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const successImage = document.getElementById('success-image');
+
+        yesBtn.addEventListener('click', () => {
+            successImage.src = 'I love you my abungingbunging 3.png';  // Replace with your Valentine image URL
+            successImage.style.display = 'block';
+        });
+
+        noBtn.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
